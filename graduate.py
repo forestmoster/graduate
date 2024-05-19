@@ -1,15 +1,14 @@
+import sys
+__import__("pysqlite3")
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from openai import OpenAI
 from langchain_community.tools import DuckDuckGoSearchRun
 import streamlit as st
 import ask_page
 from typing_extensions import override
 from openai import AssistantEventHandler
-
 from FILE_Chroma import FileChroma
-# if your deploy app in local you should not use it
-# import sys
-# __import__("pysqlite3")
-# sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
 client = OpenAI()
 styl = """
 <style>
