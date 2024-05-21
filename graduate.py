@@ -54,7 +54,6 @@ def search_web(query: str) -> str:
 
 def search_database(query):
   s = PDFS.search_upload_files_chroma(query)
-  st.caption(s)
   return f'{s}'
 
 
