@@ -37,7 +37,7 @@ styl = """
 
 st.markdown(styl, unsafe_allow_html=True)
 
-st.title("💬 烟台南山学院毕业设计论文助手")
+st.title("💬 环境设计系毕业设计论文助手")
 st.caption('你可以查询任何问题，也可以帮助我完善数据库，上传:blue[文件]')
 
 # def search_database(query: str) -> str:
