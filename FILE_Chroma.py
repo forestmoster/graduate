@@ -146,7 +146,7 @@ class FileChroma:
         wikipedia_strings = []
         db3 = Chroma(embedding_function=self.embedding_function, collection_name="state-of-union",
                      persist_directory=self.vector_folder)
-        answer = db3.similarity_search(query, k=5)
+        answer = db3.similarity_search(query, k=15)
         return answer
 
 
