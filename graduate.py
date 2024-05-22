@@ -8,7 +8,7 @@ import ask_page
 from typing_extensions import override
 from openai import AssistantEventHandler
 from FILE_Chroma import FileChroma
-
+import json
 client = OpenAI()
 styl = """
 <style>
@@ -48,12 +48,15 @@ search = DuckDuckGoSearchRun()
 PDFS=FileChroma('./tmp/graduate_database/vector')
 
 def search_web(query: str) -> str:
-    query_message = search(query)
+      # 解析 JSON 字符串
+    s = json.loads(query)
+    query_message = search.run(s['query'])
     return query_message
 
 
 def search_database(query):
-  s = PDFS.search_upload_files_chroma(query)
+  g= json.loads(query)
+  s = PDFS.search_upload_files_chroma(g['query'])
   return f'{s}'
 
 
