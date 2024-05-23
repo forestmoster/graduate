@@ -49,9 +49,13 @@ PDFS=FileChroma('./tmp/graduate_database/vector')
 
 def search_web(query: str) -> str:
       # 解析 JSON 字符串
-    s = json.loads(query)
+  s = json.loads(query)
+  try:
     query_message = search.run(s['query'])
     return query_message
+  except:
+    st.write('我没有搜索到结果')
+    return '我没有搜索到结果'
 
 
 def search_database(query):
