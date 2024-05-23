@@ -54,7 +54,6 @@ def search_web(query: str) -> str:
     query_message = search.run(s['query'])
     return query_message
   except:
-    st.write('我没有搜索到结果')
     return '我没有搜索到结果'
 
 
